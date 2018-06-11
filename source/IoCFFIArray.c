@@ -33,7 +33,7 @@ IoCFFIArray *IoCFFIArray_proto(void *state)
 	memset(DATA(self), 0, sizeof(IoCFFIArrayData));
 	DATA(self)->needToFreeBuffer = 0;
 
-	IoState_registerProtoWithFunc_(state, self, IoCFFIArray_proto);
+    IoState_registerProtoWithId_(state, self, protoId);
 	{
 		IoMethodTable methodTable[] = {
 			{"address", IoCFFIArray_address},

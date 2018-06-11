@@ -42,7 +42,7 @@ IoCFFIDataType *IoCFFIDataType_proto(void *state)
 	memset(DATA(self), 0, sizeof(IoCFFIDataTypeData));
 	DATA(self)->valuePointer = &(DATA(self)->type);
 
-	IoState_registerProtoWithFunc_(state, self, IoCFFIDataType_proto);
+    IoState_registerProtoWithId_(state, self, protoId);
 
 	{
 		IoMethodTable methodTable[] = {

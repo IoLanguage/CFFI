@@ -44,7 +44,7 @@ IoCFFIPointer *IoCFFIPointer_proto(void *state)
 	memset(DATA(self), 0, sizeof(IoCFFIPointerData));
 	DATA(self)->valuePointer = &(DATA(self)->ptr);
 
-	IoState_registerProtoWithFunc_(state, self, IoCFFIPointer_proto);
+    IoState_registerProtoWithId_(state, self, protoId);
 
 	{
 		IoMethodTable methodTable[] = {

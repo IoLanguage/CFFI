@@ -47,7 +47,7 @@ IoCFFIStructure *IoCFFIStructure_proto(void *state)
 	IoObject_setDataPointer_(self, io_calloc(1, sizeof(IoCFFIStructureData)));
 	memset(DATA(self), 0, sizeof(IoCFFIStructureData));
 
-	IoState_registerProtoWithFunc_(state, self, IoCFFIStructure_proto);
+    IoState_registerProtoWithId_(state, self, protoId);
 	{
 		IoMethodTable methodTable[] = {
 			{"address", IoCFFIStructure_address},

@@ -44,7 +44,7 @@ IoCFFIFunction *IoCFFIFunction_proto(void *state)
 	memset(DATA(self), 0, sizeof(IoCFFIFunctionData));
 	DATA(self)->valuePointer = &(DATA(self)->code);
 
-	IoState_registerProtoWithFunc_(state, self, IoCFFIFunction_proto);
+    IoState_registerProtoWithId_(state, self, protoId);
 	{
 		IoMethodTable methodTable[] = {
 			{"call", IoCFFIFunction_call},
